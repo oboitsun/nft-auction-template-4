@@ -4,32 +4,42 @@ const UserContext = React.createContext()
 
 class UserProvider extends Component {
   // Context state
+
   state = {
+    editMode: true,
     button: {
       bckColor: 'green',
       borderColor: 'white',
       borderRadius: 4,
     },
     mainSection: {
-      bckColor: 'red',
+      edit: false,
+      bckColor: '#a3e6ff',
+      borderWidth: 2,
       borderColor: 'white',
-      pattern: 'flat',
+      pattern: 'lined',
       patternColor: 'white',
     },
     categorySection: {
+      edit: false,
       bckColor: 'red',
+      borderWidth: 2,
       borderColor: 'white',
-      pattern: 'flat',
+      pattern: 'dotted',
       patternColor: 'white',
     },
     bidSection: {
+      edit: true,
       bckColor: 'red',
+      borderWidth: 2,
       borderColor: 'white',
       pattern: 'flat',
       patternColor: 'white',
     },
     offersSection: {
+      edit: false,
       bckColor: 'red',
+      borderWidth: 2,
       borderColor: 'white',
       pattern: 'flat',
       patternColor: 'white',
@@ -37,20 +47,38 @@ class UserProvider extends Component {
   }
 
   // Method to update state
-  setUser = (user) => {
-    this.setState((prevState) => ({ user }))
+  setMode = () => {
+    this.setState((prevState) => ({ ...prevState, editMode: !prevState.editMode }))
   }
-
+  showEditor = (what) => {
+    let oldState = this.state
+    Object.entries(oldState).map((key) => {
+      if (key[0] === what) {
+        key[1].edit = true
+      }
+      if (key[0] !== what && key[1]?.edit) {
+        key[1].edit = false
+      }
+      return key
+    })
+    this.setState({ ...oldState })
+  }
+  changeSectionProp = (where, keyProp, color) => {
+    console.log(where, keyProp, color)
+    this.setState({ ...this.state, [where]: { ...this.state[where], [keyProp]: color } })
+  }
   render() {
     const { children } = this.props
-    const { state } = this.state
-    const { setUser } = this
+    const state = this.state
+    const { setMode, showEditor, changeSectionProp } = this
 
     return (
       <UserContext.Provider
         value={{
           state,
-          setUser,
+          setMode,
+          showEditor,
+          changeSectionProp,
         }}>
         {children}
       </UserContext.Provider>
