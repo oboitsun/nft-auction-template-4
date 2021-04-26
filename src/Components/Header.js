@@ -11,15 +11,14 @@ export default class Header extends Component {
       showEditor,
     } = this.context
     return (
-      <div className='h-44 w-full flex flex-col justify-between  bg-gray-900 '>
+      <div className='h-28 w-full flex flex-col justify-between  bg-gray-900 '>
         {editMode ? (
           <TemplateEditor />
         ) : (
-          <div>
-            {' '}
+          <>
             <Nav />
             <AccountHeader />
-          </div>
+          </>
         )}
       </div>
     )

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Author from './Author'
-
+import Button from './Button'
 import BidSection from './BidSection'
 import Category from './Category'
 import Offers from './Offers'
@@ -8,22 +8,20 @@ import Offers from './Offers'
 export default class SideSection extends Component {
   render() {
     return (
-      <div className='flex flex-col lg:pt-8 h-full '>
-        <div className='mb-5'>
+      <div className='flex flex-col  2xl:pt-5 h-full '>
+        <div className='pb-5'>
           <Author />
         </div>
-        <div className='mb-1 lg:mb-5 2xl:mb-14'>
+        <div className='pb-1 lg:pb-5 2xl:pb-10'>
           <Category />
         </div>
-        <div className='mb-1 lg:mb-5'>
+        <div className='pb-1 lg:pb-5'>
           <BidSection />
         </div>
-        <div className='flex justify-center items-center mb-1 lg:mb-5 2xl:mb-12'>
-          <button className='uppercase font-semibold  px-4 py-2  bg-blue-300 border border-white'>
-            Place a Bid
-          </button>
+        <div className='flex justify-center items-center pb-1 lg:pb-5 2xl:pb-12'>
+          <Button />
         </div>
-        <div className='flex justify-between items-stretch h-full overflow-hidden'>
+        <div className='flex justify-between   overflow-hidden'>
           <Offers />
         </div>
       </div>

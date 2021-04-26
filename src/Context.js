@@ -7,10 +7,20 @@ class UserProvider extends Component {
 
   state = {
     editMode: true,
+    background: {
+      edit: false,
+      bckColor: '#a3e6ff',
+
+      pattern: 'lined',
+      patternColor: 'white',
+    },
     button: {
-      bckColor: 'green',
+      edit: false,
+      bckColor: '#a3e6ff',
+      borderWidth: 2,
       borderColor: 'white',
-      borderRadius: 4,
+      pattern: 'lined',
+      patternColor: 'white',
     },
     mainSection: {
       edit: false,

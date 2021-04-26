@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import ColorPicker from '../ColorPicker'
 import UserContext from '../../Context'
 import PatternPicker from '../PatternPicker'
-export default class MainSectionEditor extends Component {
+export default class ButtonEditor extends Component {
   static contextType = UserContext
   render() {
     const { state, changeSectionProp } = this.context
     const sectionProps = {
-      where: 'mainSection',
+      where: 'button',
       function: changeSectionProp,
     }
 
@@ -17,24 +17,20 @@ export default class MainSectionEditor extends Component {
           <ColorPicker
             name='Main Background'
             keyProp='bckColor'
-            color={state.mainSection.bckColor}
+            color={state.button.bckColor}
             {...sectionProps}
           />
         </div>
 
         <div className='mr-2'>
           <h3 className='mb-1'>Pattern:</h3>
-          <PatternPicker
-            color={state.mainSection.patternColor}
-            keyProp='pattern'
-            {...sectionProps}
-          />
+          <PatternPicker color={state.button.patternColor} keyProp='pattern' {...sectionProps} />
         </div>
         <div className='w-32 mr-2'>
           <ColorPicker
             name='Pattern Color'
             keyProp='patternColor'
-            color={state.mainSection.patternColor}
+            color={state.button.patternColor}
             {...sectionProps}
           />
         </div>
@@ -43,7 +39,7 @@ export default class MainSectionEditor extends Component {
           <ColorPicker
             name='Border Color'
             keyProp='borderColor'
-            color={state.mainSection.borderColor}
+            color={state.button.borderColor}
             {...sectionProps}
           />
         </div>
@@ -53,13 +49,13 @@ export default class MainSectionEditor extends Component {
             id='borderWidth'
             className='rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128 mt-1'
             onChange={(event) => {
-              changeSectionProp('mainSection', 'borderWidth', event.target.value)
+              changeSectionProp('button', 'borderWidth', event.target.value)
             }}
-            defaultValue={state.mainSection.borderWidth}
+            defaultValue={state.button.borderWidth}
             step='2'
             type='range'
             min='0'
-            max='8'
+            max='4'
           />
         </div>
       </div>

@@ -14,7 +14,7 @@ export default class ColorPicker extends Component {
     const where = this.props.where
     const keyProp = this.props.keyProp
     return (
-      <div className='w-full flex-col flex  relative'>
+      <div className='w-full flex-col flex  relative text-white'>
         <h3 className='mb-1'>{this.props.name}:</h3>
         <div className='p-1 w-3/4 h-10 bg-gray-400 border border-gray-800 rounded-full overflow-hidden'>
           <button
@@ -24,8 +24,9 @@ export default class ColorPicker extends Component {
         </div>
         {this.state.show && (
           <button
+            // onMouseOut={this.handleShowPicker}
             onBlur={this.handleShowPicker}
-            className='w-full p-2 rounded-md absolute transform  translate-y-full -bottom-0 right-10  z-10 focus:outline-none'>
+            className=' p-2 rounded-md absolute transform  translate-y-full -bottom-0 right-10  z-20 focus:outline-none'>
             <ChromePicker
               disableAlpha
               className='w-full h-auto'

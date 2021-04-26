@@ -9,9 +9,9 @@ class App extends React.Component {
   render() {
     return (
       <UserProvider>
-        <div className='bg-red-500'>
+        <div className=''>
           <Header />
-          <div className='py-10 w-full h-screen min-h-screen'>
+          <div className=' w-full '>
             <AuctionPreview />
           </div>
         </div>

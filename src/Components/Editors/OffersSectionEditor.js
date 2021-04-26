@@ -21,48 +21,46 @@ export default class OffersSectionEditor extends Component {
             {...sectionProps}
           />
         </div>
-        <div className='flex flex-col items-start mr-2'>
-          <div>
-            <h3 className='mb-1'>Pattern:</h3>
-            <PatternPicker
-              color={state.offersSection.patternColor}
-              keyProp='pattern'
-              {...sectionProps}
-            />
-          </div>
-          <div className='w-32 mr-2'>
-            <ColorPicker
-              name='Pattern Color'
-              keyProp='patternColor'
-              color={state.offersSection.patternColor}
-              {...sectionProps}
-            />
-          </div>
+
+        <div className='mr-2'>
+          <h3 className='mb-1'>Pattern:</h3>
+          <PatternPicker
+            color={state.offersSection.patternColor}
+            keyProp='pattern'
+            {...sectionProps}
+          />
+        </div>
+        <div className='w-32 mr-2'>
+          <ColorPicker
+            name='Pattern Color'
+            keyProp='patternColor'
+            color={state.offersSection.patternColor}
+            {...sectionProps}
+          />
+        </div>
+
+        <div className='w-32 h-1/2'>
+          <ColorPicker
+            name='Border Color'
+            keyProp='borderColor'
+            color={state.offersSection.borderColor}
+            {...sectionProps}
+          />
         </div>
         <div className='flex flex-col'>
-          <div className='w-32 h-1/2'>
-            <ColorPicker
-              name='Border Color'
-              keyProp='borderColor'
-              color={state.offersSection.borderColor}
-              {...sectionProps}
-            />
-          </div>
-          <div className='flex flex-col'>
-            <label htmlFor='borderWidth'>Border Width:</label>
-            <input
-              id='borderWidth'
-              className='rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128 mt-1'
-              onChange={(event) => {
-                changeSectionProp('offersSection', 'borderWidth', event.target.value)
-              }}
-              defaultValue={state.offersSection.borderWidth}
-              step='2'
-              type='range'
-              min='0'
-              max='4'
-            />
-          </div>
+          <label htmlFor='borderWidth'>Border Width:</label>
+          <input
+            id='borderWidth'
+            className='rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128 mt-1'
+            onChange={(event) => {
+              changeSectionProp('offersSection', 'borderWidth', event.target.value)
+            }}
+            defaultValue={state.offersSection.borderWidth}
+            step='2'
+            type='range'
+            min='0'
+            max='4'
+          />
         </div>
       </div>
     )

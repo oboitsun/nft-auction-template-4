@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class Nav extends Component {
   render() {
     return (
-      <div className='flex text-white font-semibold py-3 justify-between items-center '>
+      <div className='flex text-white font-semibold  justify-between items-center '>
         <div className='logo ml-2 lg:ml-5 2xl:ml-10 mr-5 2xl:mr-10'>LOGO</div>
         <div className='flex justify-between items-center w-full bg-gradient-to-l from-lghtbl to-transparent py-3 2xl:px-10 lg:px-5 px-2'>
           <button className='px-2'>Explore</button>
