@@ -23,7 +23,7 @@ export default class MainSection extends Component {
         onClick={() => {
           showEditor('mainSection')
         }}
-        className={` w-full h-full  flex flex-col rounded-3xl relative z-30`}>
+        className={` w-full h-full  flex justify-center rounded-3xl relative z-30`}>
         {editMode && (
           <div
             className={`edit absolute top-0 left-0  w-full h-full ${hover} rounded-2xl z-30`}></div>
@@ -32,20 +32,22 @@ export default class MainSection extends Component {
         <div
           style={{ ...headerPattern }}
           className={`absolute top-0 left-0 h-full w-full  rounded-3xl z-0`}></div>
-
-        <div className=' h-16 flex justify-end items-end 2xl:px-20 xl:px-16 lg:px-10 px-2 py-2 z-10'>
-          <Favorites />
-        </div>
-        <section className='horizontal-ratio w-full flex  z-10'>
+        <div className='w-1/12'></div>
+        <section className='vertical-ratio w-1/12  flex z-10 relative '>
           <iframe
-            className='absolute top-0 w-full h-full border-none'
-            src='https://www.youtube.com/embed/KS9fsToCwWo'
+            title='vertical'
+            className='absolute top-0 w-full h-full py-4 px-10'
+            src='https://www.youtube.com/embed/tCCY31XxN_Y'
             frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen></iframe>
+            allowFullScreen=''></iframe>
         </section>
-        <div className=' 2xl:h-60 py-2 lg:py-3 2xl:py-7 pl-3 lg:pl-6 2xl:pl-12 pr-3 xl:pr-4 2xl:pr-8  overflow-hidden  z-10'>
-          <Details />
+        <div className='w-full py-5 flex flex-col  overflow-hidden relative  z-10'>
+          <div className='flex h-1/2 pr-6'>
+            <Details />
+          </div>
+          <div className='flex justify-start items-center flex-grow'>
+            <Favorites />
+          </div>
         </div>
       </div>
     )
