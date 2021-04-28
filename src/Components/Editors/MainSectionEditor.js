@@ -53,7 +53,7 @@ export default class MainSectionEditor extends Component {
             id='borderWidth'
             className='rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128 mt-1'
             onChange={(event) => {
-              changeSectionProp('mainSection', 'borderWidth', event.target.value)
+              changeSectionProp('mainSection', 'borderWidth', parseInt(event.target.value))
             }}
             defaultValue={state.mainSection.borderWidth}
             step='2'

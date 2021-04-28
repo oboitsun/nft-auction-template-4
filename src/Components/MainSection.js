@@ -3,9 +3,15 @@ import Details from './Details'
 import Favorites from './Favorites'
 import UserContext from '../Context'
 import { choosePattern } from './patternLibrary'
+import Author from './Author'
+import Category from './Category'
+import Button from './Button'
+import Bid from './Bid'
+import AuctionEnds from './AuctionEnds'
+import OffersSection from './OffersSection'
+import BidSection from './BidSection'
 export default class MainSection extends Component {
   static contextType = UserContext
-
   render() {
     const {
       state,
@@ -20,33 +26,51 @@ export default class MainSection extends Component {
           backgroundColor: state.mainSection.bckColor,
           border: `${state.mainSection.borderWidth}px solid ${state.mainSection.borderColor}`,
         }}
-        onClick={() => {
-          showEditor('mainSection')
-        }}
-        className={` w-full h-full  flex justify-center rounded-3xl relative z-30`}>
-        {editMode && (
-          <div
-            className={`edit absolute top-0 left-0  w-full h-full ${hover} rounded-2xl z-30`}></div>
-        )}
+        className={`relative w-full h-full text-black font-vt flex flex-col rounded-tl-2xl rounded-bl-2xl overflow-hidden z-10`}>
+        <div className='relative w-full h-full'>
+          {editMode && (
+            <div
+              className={`edit absolute top-0 left-0  w-full h-full ${hover}  z-20`}
+              onClick={() => {
+                showEditor('mainSection')
+              }}></div>
+          )}
 
-        <div
-          style={{ ...headerPattern }}
-          className={`absolute top-0 left-0 h-full w-full  rounded-3xl z-0`}></div>
-        <div className='w-1/12'></div>
-        <section className='vertical-ratio w-1/12  flex z-10 relative '>
-          <iframe
-            title='vertical'
-            className='absolute top-0 w-full h-full py-4 px-10'
-            src='https://www.youtube.com/embed/tCCY31XxN_Y'
-            frameBorder='0'
-            allowFullScreen=''></iframe>
-        </section>
-        <div className='w-full py-5 flex flex-col  overflow-hidden relative  z-10'>
-          <div className='flex h-1/2 pr-6'>
-            <Details />
+          <div
+            style={{ ...headerPattern }}
+            className={`absolute top-0 left-0 h-full w-full z-10`}></div>
+          <div className='w-full h-full flex flex-col  px-12 pt-12 pb-8'>
+            <div className='mb-4'>
+              <Author />
+            </div>
+            <div className='flex justify-start ml-10 mb-10'>
+              <Favorites />
+            </div>
+            <div className='mb-10'>
+              <Category />
+            </div>
+            <div className='w-full overflow-hidden'>
+              <Details />
+            </div>
+            <div className='flex justify-center items-center'>
+              <div className='flex justify-center 2xl:w1/4 xl:w-1/3 w-1/2 z-20'>
+                <Button />
+              </div>
+            </div>
           </div>
-          <div className='flex justify-start items-center flex-grow'>
-            <Favorites />
+        </div>
+        <div
+          style={{
+            backgroundColor: `${
+              state.mainSection.borderWidth > 0 ? state.mainSection.borderColor : 'transparent'
+            }`,
+          }}
+          className='flex w-full max-h-60 pt-0.5 z-10'>
+          <div className='w-1/2 h-full box-border flex flex-col  text-black'>
+            <BidSection />
+          </div>
+          <div className='w-1/2 h-full box-border flex flex-col ml-0.5 '>
+            <OffersSection />
           </div>
         </div>
       </div>

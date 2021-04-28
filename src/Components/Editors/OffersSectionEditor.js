@@ -43,8 +43,9 @@ export default class OffersSectionEditor extends Component {
           <ColorPicker
             name='Border Color'
             keyProp='borderColor'
-            color={state.offersSection.borderColor}
-            {...sectionProps}
+            color={state.mainSection.borderColor}
+            where='mainSection'
+            function={changeSectionProp}
           />
         </div>
         <div className='flex flex-col'>
@@ -53,13 +54,13 @@ export default class OffersSectionEditor extends Component {
             id='borderWidth'
             className='rounded-lg overflow-hidden appearance-none bg-gray-400 h-3 w-128 mt-1'
             onChange={(event) => {
-              changeSectionProp('offersSection', 'borderWidth', event.target.value)
+              changeSectionProp('mainSection', 'borderWidth', parseInt(event.target.value))
             }}
-            defaultValue={state.offersSection.borderWidth}
+            defaultValue={state.mainSection.borderWidth}
             step='2'
             type='range'
             min='0'
-            max='4'
+            max='8'
           />
         </div>
       </div>

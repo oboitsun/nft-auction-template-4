@@ -25,7 +25,7 @@ class UserProvider extends Component {
     mainSection: {
       edit: false,
       bckColor: '#a3e6ff',
-      borderWidth: 2,
+      borderWidth: 4,
       borderColor: 'white',
       pattern: 'lined',
       patternColor: 'white',

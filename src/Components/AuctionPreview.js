@@ -34,11 +34,11 @@ export default class AuctionPreview extends Component {
         {editMode && (
           <div className={`bck absolute top-0 left-0 h-full w-full ${hover} z-10  `}></div>
         )}
-        <div className='px-5 xl:max-w-7xl 2xl:max-w-8xl xl:max-h-750 2xl:max-h-825 w-full h-full m-auto flex font-barlow overflow-hidden'>
-          <div className='xl:w-2/3 mr-3  relative z-30'>
+        <div className='px-5 xl:max-w-7xl 2xl:max-w-8xl xl:max-h-750 2xl:max-h-825 w-full h-full  m-auto flex overflow-hidden'>
+          <div className='xl:w-full mr-4'>
             <MainSection />
           </div>
-          <div className='xl:w-1/3 relative z-10'>
+          <div className='xl:w-5/12 2xl:w-full  2xl:max-w-md '>
             <SideSection />
           </div>
 
