@@ -26,7 +26,7 @@ export default class MainSection extends Component {
           backgroundColor: state.mainSection.bckColor,
           border: `${state.mainSection.borderWidth}px solid ${state.mainSection.borderColor}`,
         }}
-        className={`relative w-full h-full text-black font-vt flex flex-col rounded-tl-2xl rounded-bl-2xl overflow-hidden z-10`}>
+        className={`relative w-full h-full text-black font-vt flex flex-col rounded-2xl overflow-hidden z-10 `}>
         <div className='relative w-full h-full'>
           {editMode && (
             <div
@@ -38,24 +38,24 @@ export default class MainSection extends Component {
 
           <div
             style={{ ...headerPattern }}
-            className={`absolute top-0 left-0 h-full w-full z-10`}></div>
-          <div className='w-full h-full flex flex-col  px-12 pt-12 pb-8'>
-            <div className='mb-4'>
+            className={`absolute top-0 left-0 h-full w-full z-10 `}></div>
+          <div className='w-full  flex flex-shrink '>
+            <div className='w-1/5 pl-10  py-10'>
               <Author />
             </div>
-            <div className='flex justify-start ml-10 mb-10'>
+
+            <div className='w-full  '>
+              <section className='horizontal-ratio w-full flex  z-10'>
+                <iframe
+                  className='absolute top-0 w-full h-full border-none py-10'
+                  src='https://www.youtube.com/embed/KS9fsToCwWo'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                  allowFullScreen></iframe>
+              </section>
+            </div>
+            <div className='w-1/5 pl-5  py-10 items-start z-10'>
               <Favorites />
-            </div>
-            <div className='mb-10'>
-              <Category />
-            </div>
-            <div className='w-full overflow-hidden'>
-              <Details />
-            </div>
-            <div className='flex justify-center items-center'>
-              <div className='flex justify-center 2xl:w1/4 xl:w-1/3 w-1/2 z-20'>
-                <Button />
-              </div>
             </div>
           </div>
         </div>
@@ -65,11 +65,14 @@ export default class MainSection extends Component {
               state.mainSection.borderWidth > 0 ? state.mainSection.borderColor : 'transparent'
             }`,
           }}
-          className='flex w-full max-h-60 pt-0.5 z-10'>
-          <div className='w-1/2 h-full box-border flex flex-col  text-black'>
+          className='flex w-full  h-60 pt-0.5 z-10'>
+          <div className='w-1/3 h-full box-border flex flex-col  text-black'>
+            <Details />
+          </div>
+          <div className='w-1/3 h-full mx-0.5 box-border flex flex-col  text-black'>
             <BidSection />
           </div>
-          <div className='w-1/2 h-full box-border flex flex-col ml-0.5 '>
+          <div className='w-1/3 h-full box-border flex flex-col  '>
             <OffersSection />
           </div>
         </div>

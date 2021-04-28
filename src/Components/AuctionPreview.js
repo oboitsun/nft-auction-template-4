@@ -35,11 +35,8 @@ export default class AuctionPreview extends Component {
           <div className={`bck absolute top-0 left-0 h-full w-full ${hover} z-10  `}></div>
         )}
         <div className='px-5 xl:max-w-7xl 2xl:max-w-8xl xl:max-h-750 2xl:max-h-825 w-full h-full  m-auto flex overflow-hidden'>
-          <div className='xl:w-full mr-4'>
+          <div className='w-full'>
             <MainSection />
-          </div>
-          <div className='xl:w-5/12 2xl:w-full  2xl:max-w-md '>
-            <SideSection />
           </div>
 
           <div className='absolute top-26 right-4 text-white flex- flex-col z-40'>

@@ -20,7 +20,7 @@ export default class Button extends Component {
         onClick={() => {
           showEditor('button')
         }}
-        className={`uppercase text-3xl px-6 py-1 rounded-lg  overflow-hidden relative`}>
+        className={`uppercase text-3xl px-8 py-1 rounded-lg  overflow-hidden relative`}>
         {editMode && <div className={`absolute top-0 left-0 h-full w-full ${hover} z-40  `}></div>}
         <div
           style={{ ...categoryPattern }}

@@ -23,13 +23,13 @@ export default class BidSection extends Component {
         onClick={() => {
           showEditor('bidSection')
         }}
-        className={`flex justify-between   xl:px-5 xl:py-2 2xl:px-10 2xl:py-8 relative `}>
+        className={`flex flex-col  items-center py-5 pb-10 h-full relative `}>
         {editMode && <div className={`absolute top-0 left-0 h-full w-full ${hover} z-20 `}></div>}
 
         <div
           style={{ ...categoryPattern }}
           className={`absolute top-0 left-0 h-full w-full   z-0`}></div>
-        <div className='xl:mb-2 2xl:mb-8 z-10'>
+        <div className='z-10 mb-10'>
           <Bid />
         </div>
         <div className='z-10'>

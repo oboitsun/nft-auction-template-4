@@ -5,7 +5,7 @@ import Star from './Icons/Star'
 export default class Favorites extends Component {
   render() {
     return (
-      <div className='flex items-center justify-center'>
+      <div className='flex items-center z-10 '>
         <span className='w-5 h-6  mr-2 fill-current'>
           <Star />
         </span>
